@@ -15,6 +15,7 @@ variable "node_sensor_mode" {
   description = "Falcon Node Sensor mode: 'kernel' or 'bpf'."
   type        = string
   default     = "bpf"
+}
 
 # Falcon credentials
 variable "client_id" {
