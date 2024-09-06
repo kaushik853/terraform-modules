@@ -1,5 +1,6 @@
 data "http" "falcon_operator" {
   url = "https://raw.githubusercontent.com/CrowdStrike/falcon-operator/main/deploy/falcon-operator.yaml"
+}
 
 data "kubectl_file_documents" "docs" {
   content = data.http.falcon_operator.response_body
