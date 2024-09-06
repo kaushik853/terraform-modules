@@ -24,8 +24,7 @@ resource "kubectl_manifest" "falcon_node_sensor" {
         client_id: ${var.client_id}
         client_secret: ${var.client_secret}
         cloud_region: autodiscover
-      node:
-        backend: ${var.node_sensor_mode}
+      node: {}
       falcon:
         tags:
         - daemonset
