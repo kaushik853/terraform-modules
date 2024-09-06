@@ -18,16 +18,7 @@ resource "kubectl_manifest" "falcon_node_sensor" {
     apiVersion: falcon.crowdstrike.com/v1alpha1
     kind: FalconNodeSensor
     metadata:
-      labels:
-        crowdstrike.com/component: sample
-        crowdstrike.com/created-by: falcon-operator
-        crowdstrike.com/instance: falcon-node-sensor
-        crowdstrike.com/managed-by: kustomize
-        crowdstrike.com/name: falconnodesensor
-        crowdstrike.com/part-of: Falcon
-        crowdstrike.com/provider: crowdstrike
       name: falcon-node-sensor
-      namespace: falcon-operator
     spec:
       falcon_api:
         client_id: ${var.client_id}
