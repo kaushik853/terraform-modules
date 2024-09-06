@@ -24,10 +24,13 @@ resource "kubectl_manifest" "falcon_node_sensor" {
         client_id: ${var.client_id}
         client_secret: ${var.client_secret}
         cloud_region: autodiscover
-      node: {}
+      node:
+        backend: ${var.node_sensor_mode}
       falcon:
         tags:
+        - daemonset
         - ${var.environment}
+        trace: none
     YAML
   depends_on = [
     kubectl_manifest.falcon_operator
